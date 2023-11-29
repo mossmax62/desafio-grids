@@ -4,16 +4,51 @@
     box-sizing: border-box;
 }
 .grid-container{
+    height: 100vh;
     display: grid;
-    grid-template-columns: 50% 1fr 1fr;
-    gap: 10px 50px;
+    grid-template-areas: 
+    'header header header'
+    'sidebar main main'
+    'footer footer footer';
+    grid-template-columns: .5fr 4fr 1fr;
+    grid-template-rows: .5fr 4fr 1fr;
 }
-.grid-item{
-    height: 300px;
+@media (max-width: 768px){
+    .grid-container{
+        display: grid;
+        grid-template-areas: 
+        'header'
+        'sidebar'
+        'main'
+        'footer ';
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 100px calc(100vh - 280px) 100px;
+    }
+}
+.box{
+    
     border: solid 2px black;
-    background-image: url('https://placedog.net/505');
-    background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+    
+}
+.header{
+    grid-area: header;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.main{
+    grid-area: main;
+}
+.footer{
+    grid-area: footer;
+}
+@media(min)
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'sidebar'
+    'main'
+    'footer ';
     
 }
