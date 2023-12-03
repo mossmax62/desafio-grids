@@ -1,54 +1,95 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Montserrat:ital,wght@0,800;1,600;1,900&family=Raleway:ital,wght@0,300;1,500&family=Roboto:wght@300;400;500&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', Regular;
 }
-.grid-container{
+
+.grid-container {
     height: 100vh;
     display: grid;
-    grid-template-areas: 
-    'header header header'
-    'sidebar main main'
-    'footer footer footer';
-    grid-template-columns: .5fr 4fr 1fr;
-    grid-template-rows: .5fr 4fr 1fr;
+    grid-template-areas:
+        'header header header'
+        'sidebar main main'
+        'footer footer footer';
+    
 }
-@media (max-width: 768px){
-    .grid-container{
+
+@media (max-width: 768px) {
+    .grid-container {
         display: grid;
-        grid-template-areas: 
-        'header'
-        'sidebar'
-        'main'
-        'footer ';
+        grid-template-areas:
+            'header'
+            'sidebar'
+            'main'
+            'footer ';
         grid-template-columns: 1fr;
         grid-template-rows: 80px 100px calc(100vh - 280px) 100px;
     }
 }
-.box{
-    
+
+.box {
+
     border: solid 2px black;
-    
+
 }
-.header{
+
+.header {
     grid-area: header;
+    background-color: #2F7FF1;
 }
-.sidebar{
+
+.sidebar {
     grid-area: sidebar;
+    background-color: lightblue;
 }
-.main{
+
+.main {
+    height: 100%;
     grid-area: main;
-}
-.footer{
-    grid-area: footer;
-}
-@media(min)
-.grid-container{
+    background-color: lightblue;
     display: grid;
-    grid-template-areas: 
-    'header'
-    'sidebar'
-    'main'
-    'footer ';
-    
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.footer {
+    grid-area: footer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+}
+
+.categorias-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 5px;
+    margin-left: 30px;
+}
+
+.product-container {
+    margin: 50px;
+    border: solid 1px black;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.product-container img {
+    height: 100%;
 }
